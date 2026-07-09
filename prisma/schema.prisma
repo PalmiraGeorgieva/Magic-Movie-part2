@@ -8,9 +8,9 @@ datasource db {
 }
 
 model Movie {
-  id          Int      @id @default(autoincrement())
+  id          Int       @id @default(autoincrement())
   title       String
   genre       String
-  releaseDate DateTime
-  createdAt   DateTime @default(now())
+  releaseDate DateTime  @db.Timestamptz(6)
+  createdAt   DateTime? @default(now()) @db.Timestamptz(6)
 }

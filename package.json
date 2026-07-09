@@ -22,7 +22,7 @@
   "homepage": "https://github.com/PalmiraGeorgieva/Magic-Movie-part2#readme",
   "dependencies": {
     "@prisma/adapter-pg": "^7.8.0",
-    "@prisma/client": "^7.8.0",
+    "@prisma/client": "^4.16.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-handlebars": "^9.0.1",
@@ -31,7 +31,7 @@
   "devDependencies": {
     "@types/node": "^26.1.0",
     "@types/pg": "^8.20.0",
-    "prisma": "^7.8.0",
+    "prisma": "^4.16.0",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3"
   }
