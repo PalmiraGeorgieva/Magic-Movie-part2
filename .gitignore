@@ -20,3 +20,6 @@ build/
 # Editor directories and files
 .vscode/
 .idea/
+
+# Environment variables
+.env
