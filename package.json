@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
   "devDependencies": {
     "@types/node": "^26.1.1",
     "tsx": "^4.23.0",
