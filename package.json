@@ -6,7 +6,8 @@
   "scripts": {
     "start": "tsx src/index.js",
     "dev": "tsx --watch src/index.js",
-    "generate:client": "prisma generate"
+    "generate:client": "prisma generate",
+    "prisma:test": "node src/test-prisma.js"
   },
   "repository": {
     "type": "git",
