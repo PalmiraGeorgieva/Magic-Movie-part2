@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+**/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# MacOS files
+.DS_Store
+
+# Dependency directories
+pnpm-lock.yaml
+
+# Build output
+dist/
+build/
+
+# Editor directories and files
+.vscode/
+.idea/
