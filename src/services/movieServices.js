@@ -11,7 +11,8 @@ async function create(movieData) {
 }
 
 async function getById(movieId) {
-    return movieRepository.getById(movieId);
+    const id = Number(movieId);
+    return movieRepository.getById(id);
 }
 
 async function search(searchParams) {
