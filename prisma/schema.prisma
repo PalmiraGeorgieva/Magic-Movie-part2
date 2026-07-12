@@ -10,8 +10,16 @@ datasource db {
 model Movie {
   id          Int       @id @default(autoincrement())
   title       String
-  description  String
+  category    String
+  genre       String
+  director    String
+  year        Int
+  imageUrl    String
+  rating      Float
+  description String
   releaseDate DateTime  @db.Timestamptz(6)
   createdAt   DateTime? @default(now()) @db.Timestamptz(6)
-  updatedAt  DateTime.  @updatedAt
+  updatedAt   DateTime  @updatedAt
+
+  @@map("movies")
 }
