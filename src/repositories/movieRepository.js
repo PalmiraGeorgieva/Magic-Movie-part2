@@ -17,7 +17,18 @@ async function writeDB(db) {
 }
 
 async function getAll(filter = {}) {
-    const movies = await readDB('movies');
+    let movies = await prisma.movie.findMany();
+
+    if(filter.search) {
+        movies = movies.filter(movie => movie.title.toLowerCase().includes(filter.search.toLowerCase()));
+    }
+
+    if(filter.genre) {
+        movies = movies.filter(movie => movie.genre.toLowerCase().includes(filter.genre.toLowerCase()));
+    }
+    if(filter.year) {
+        movies = movies.filter(movie => String(movie.year) === String(filter.year));
+    }
     return movies;
 }    
 
