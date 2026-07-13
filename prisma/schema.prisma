@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client-js"
+  output   = "../src/db"
 }
 
 datasource db {
@@ -21,4 +22,15 @@ model Movie {
   updatedAt   DateTime  @updatedAt
 
   @@map("movies")
+}
+
+model Artist {
+  id        Int  @id @default(autoincrement())
+  name      String  
+  born      String 
+  imageUrl  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@map("artists")
 }

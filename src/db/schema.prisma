@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/db"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Movie {
+  id          Int       @id @default(autoincrement())
+  title       String
+  category    String
+  genre       String
+  director    String
+  year        Int
+  imageUrl    String
+  rating      Float
+  description String
+  releaseDate DateTime  @db.Timestamptz(6)
+  createdAt   DateTime? @default(now()) @db.Timestamptz(6)
+  updatedAt   DateTime  @updatedAt
+
+  @@map("movies")
+}
+
+model Artist {
+  id        Int      @id @default(autoincrement())
+  name      String
+  born      String
+  imageUrl  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("artists")
+}
