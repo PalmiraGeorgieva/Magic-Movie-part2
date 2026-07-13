@@ -2104,15 +2104,18 @@ export namespace Prisma {
 
   export type ArtistAvgAggregateOutputType = {
     id: number | null
+    age: number | null
   }
 
   export type ArtistSumAggregateOutputType = {
     id: number | null
+    age: number | null
   }
 
   export type ArtistMinAggregateOutputType = {
     id: number | null
     name: string | null
+    age: number | null
     born: string | null
     imageUrl: string | null
     createdAt: Date | null
@@ -2122,6 +2125,7 @@ export namespace Prisma {
   export type ArtistMaxAggregateOutputType = {
     id: number | null
     name: string | null
+    age: number | null
     born: string | null
     imageUrl: string | null
     createdAt: Date | null
@@ -2131,6 +2135,7 @@ export namespace Prisma {
   export type ArtistCountAggregateOutputType = {
     id: number
     name: number
+    age: number
     born: number
     imageUrl: number
     createdAt: number
@@ -2141,15 +2146,18 @@ export namespace Prisma {
 
   export type ArtistAvgAggregateInputType = {
     id?: true
+    age?: true
   }
 
   export type ArtistSumAggregateInputType = {
     id?: true
+    age?: true
   }
 
   export type ArtistMinAggregateInputType = {
     id?: true
     name?: true
+    age?: true
     born?: true
     imageUrl?: true
     createdAt?: true
@@ -2159,6 +2167,7 @@ export namespace Prisma {
   export type ArtistMaxAggregateInputType = {
     id?: true
     name?: true
+    age?: true
     born?: true
     imageUrl?: true
     createdAt?: true
@@ -2168,6 +2177,7 @@ export namespace Prisma {
   export type ArtistCountAggregateInputType = {
     id?: true
     name?: true
+    age?: true
     born?: true
     imageUrl?: true
     createdAt?: true
@@ -2264,6 +2274,7 @@ export namespace Prisma {
   export type ArtistGroupByOutputType = {
     id: number
     name: string
+    age: number
     born: string
     imageUrl: string
     createdAt: Date
@@ -2292,6 +2303,7 @@ export namespace Prisma {
   export type ArtistSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    age?: boolean
     born?: boolean
     imageUrl?: boolean
     createdAt?: boolean
@@ -2301,6 +2313,7 @@ export namespace Prisma {
   export type ArtistSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    age?: boolean
     born?: boolean
     imageUrl?: boolean
     createdAt?: boolean
@@ -2310,6 +2323,7 @@ export namespace Prisma {
   export type ArtistSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    age?: boolean
     born?: boolean
     imageUrl?: boolean
     createdAt?: boolean
@@ -2319,13 +2333,14 @@ export namespace Prisma {
   export type ArtistSelectScalar = {
     id?: boolean
     name?: boolean
+    age?: boolean
     born?: boolean
     imageUrl?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type ArtistOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "born" | "imageUrl" | "createdAt" | "updatedAt", ExtArgs["result"]["artist"]>
+  export type ArtistOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "age" | "born" | "imageUrl" | "createdAt" | "updatedAt", ExtArgs["result"]["artist"]>
 
   export type $ArtistPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Artist"
@@ -2333,6 +2348,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       name: string
+      age: number
       born: string
       imageUrl: string
       createdAt: Date
@@ -2762,6 +2778,7 @@ export namespace Prisma {
   interface ArtistFieldRefs {
     readonly id: FieldRef<"Artist", 'Int'>
     readonly name: FieldRef<"Artist", 'String'>
+    readonly age: FieldRef<"Artist", 'Int'>
     readonly born: FieldRef<"Artist", 'String'>
     readonly imageUrl: FieldRef<"Artist", 'String'>
     readonly createdAt: FieldRef<"Artist", 'DateTime'>
@@ -3172,6 +3189,7 @@ export namespace Prisma {
   export const ArtistScalarFieldEnum: {
     id: 'id',
     name: 'name',
+    age: 'age',
     born: 'born',
     imageUrl: 'imageUrl',
     createdAt: 'createdAt',
@@ -3364,6 +3382,7 @@ export namespace Prisma {
     NOT?: ArtistWhereInput | ArtistWhereInput[]
     id?: IntFilter<"Artist"> | number
     name?: StringFilter<"Artist"> | string
+    age?: IntFilter<"Artist"> | number
     born?: StringFilter<"Artist"> | string
     imageUrl?: StringFilter<"Artist"> | string
     createdAt?: DateTimeFilter<"Artist"> | Date | string
@@ -3373,6 +3392,7 @@ export namespace Prisma {
   export type ArtistOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
+    age?: SortOrder
     born?: SortOrder
     imageUrl?: SortOrder
     createdAt?: SortOrder
@@ -3385,6 +3405,7 @@ export namespace Prisma {
     OR?: ArtistWhereInput[]
     NOT?: ArtistWhereInput | ArtistWhereInput[]
     name?: StringFilter<"Artist"> | string
+    age?: IntFilter<"Artist"> | number
     born?: StringFilter<"Artist"> | string
     imageUrl?: StringFilter<"Artist"> | string
     createdAt?: DateTimeFilter<"Artist"> | Date | string
@@ -3394,6 +3415,7 @@ export namespace Prisma {
   export type ArtistOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
+    age?: SortOrder
     born?: SortOrder
     imageUrl?: SortOrder
     createdAt?: SortOrder
@@ -3411,6 +3433,7 @@ export namespace Prisma {
     NOT?: ArtistScalarWhereWithAggregatesInput | ArtistScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Artist"> | number
     name?: StringWithAggregatesFilter<"Artist"> | string
+    age?: IntWithAggregatesFilter<"Artist"> | number
     born?: StringWithAggregatesFilter<"Artist"> | string
     imageUrl?: StringWithAggregatesFilter<"Artist"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Artist"> | Date | string
@@ -3521,6 +3544,7 @@ export namespace Prisma {
 
   export type ArtistCreateInput = {
     name: string
+    age: number
     born: string
     imageUrl: string
     createdAt?: Date | string
@@ -3530,6 +3554,7 @@ export namespace Prisma {
   export type ArtistUncheckedCreateInput = {
     id?: number
     name: string
+    age: number
     born: string
     imageUrl: string
     createdAt?: Date | string
@@ -3538,6 +3563,7 @@ export namespace Prisma {
 
   export type ArtistUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
+    age?: IntFieldUpdateOperationsInput | number
     born?: StringFieldUpdateOperationsInput | string
     imageUrl?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3547,6 +3573,7 @@ export namespace Prisma {
   export type ArtistUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    age?: IntFieldUpdateOperationsInput | number
     born?: StringFieldUpdateOperationsInput | string
     imageUrl?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3556,6 +3583,7 @@ export namespace Prisma {
   export type ArtistCreateManyInput = {
     id?: number
     name: string
+    age: number
     born: string
     imageUrl: string
     createdAt?: Date | string
@@ -3564,6 +3592,7 @@ export namespace Prisma {
 
   export type ArtistUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
+    age?: IntFieldUpdateOperationsInput | number
     born?: StringFieldUpdateOperationsInput | string
     imageUrl?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3573,6 +3602,7 @@ export namespace Prisma {
   export type ArtistUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    age?: IntFieldUpdateOperationsInput | number
     born?: StringFieldUpdateOperationsInput | string
     imageUrl?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3781,6 +3811,7 @@ export namespace Prisma {
   export type ArtistCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    age?: SortOrder
     born?: SortOrder
     imageUrl?: SortOrder
     createdAt?: SortOrder
@@ -3789,11 +3820,13 @@ export namespace Prisma {
 
   export type ArtistAvgOrderByAggregateInput = {
     id?: SortOrder
+    age?: SortOrder
   }
 
   export type ArtistMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    age?: SortOrder
     born?: SortOrder
     imageUrl?: SortOrder
     createdAt?: SortOrder
@@ -3803,6 +3836,7 @@ export namespace Prisma {
   export type ArtistMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    age?: SortOrder
     born?: SortOrder
     imageUrl?: SortOrder
     createdAt?: SortOrder
@@ -3811,6 +3845,7 @@ export namespace Prisma {
 
   export type ArtistSumOrderByAggregateInput = {
     id?: SortOrder
+    age?: SortOrder
   }
 
   export type StringFieldUpdateOperationsInput = {
