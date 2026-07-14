@@ -21,6 +21,8 @@ model Movie {
   createdAt   DateTime? @default(now()) @db.Timestamptz(6)
   updatedAt   DateTime  @updatedAt
 
+  cast Artist[]
+
   @@map("movies")
 }
 
@@ -32,6 +34,6 @@ model Artist {
   imageUrl  String
   createdAt DateTime @default(now())
   updatedAt DateTime  @updatedAt
-
+  movies  Movie[]
   @@map("artists")
 }
