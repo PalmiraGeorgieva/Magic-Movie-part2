@@ -1,5 +1,6 @@
 import fs from 'fs/promises';
 import { prisma } from '../lib/prisma.js';
+import { throws } from 'assert';
 
 
 async function getAll(filter = {}) {
@@ -23,6 +24,18 @@ async function create(movieData) {
     data: movieData,
   });
   return movie;
+}
+async function attachArtist(movieId, artistId) {
+   const result = await prisma.movie.update({
+    where: { id: movieId},
+    data: {
+        artists: {
+            connect: { id: artistId }
+        }
+    }
+   });
+
+   return result;
 }
 async function getById(movieId) {
     const movie = await prisma.movie.findUnique({

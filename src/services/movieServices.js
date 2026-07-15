@@ -18,7 +18,12 @@ async function getById(movieId) {
 async function search(searchParams) {
     return movieRepository.search(searchParams);
 }
-
+async function attachArtist(movieId, artistId) {
+    const movieNumber = Number(movieId);
+    const artistNumber = Number(artistId);
+    const result = await movieRepository.attachArtist(movieNumber, artistNumber);
+    return result;
+}
 const movieServices = {
     getAll,
     create,
