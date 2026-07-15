@@ -29,7 +29,7 @@ movieController.get('/:movieId/details', async (req, res) => {
 
     try {
         const movie = await movieServices.getById(movieId);
-        res.render('movies/details', { movie });
+        res.render('movies/details', { movie, pageTitle: 'Movie Details', ratingStars });
     } catch (err) {
         res.status(404).render('404', { title: 'Page Not Found' });
     }

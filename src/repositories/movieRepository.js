@@ -39,8 +39,14 @@ async function attachArtist(movieId, artistId) {
 }
 async function getById(movieId) {
     const movie = await prisma.movie.findUnique({
-        where: {
-            id: movieId
+        where: { id: movieId },
+        includes: {
+            artists: {
+                select: {
+                    id: true,
+                    name: true,
+                }
+            }
         }
     });
     if(!movie) {
