@@ -8,6 +8,7 @@
     "dev": "tsx --watch src/index.js",
     "generate": "npm run generate:client",
     "generate:client": "prisma generate",
+    "db:seed": "node prisma/seed.js",
     "prisma:test": "node src/test-prisma.js"
   },
   "repository": {
