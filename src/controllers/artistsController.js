@@ -4,7 +4,7 @@ import artistService from "../services/artistService.js";
 const artistController = Router();
 
 artistController.get('/create', (req, res) => {
-    res.render('artists.create');
+    res.render('artists/create');
 });
 
 artistController.post('/create', async (req, res) => {
