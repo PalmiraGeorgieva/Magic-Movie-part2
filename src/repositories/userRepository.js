@@ -11,8 +11,15 @@ export async function create(userData) {
    return result;
 }
 
+export async function findByEmail(email) {
+   return prisma.user.findUnique({
+      where: { email },
+   });
+}
+
 const userRepository = {
     create,
+    findByEmail,
 }
 
 export default userRepository;
