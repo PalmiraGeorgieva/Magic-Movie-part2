@@ -1,6 +1,7 @@
 import express from 'express';
 import { engine } from 'express-handlebars';
 import routes from './routs.js';
+import { authMiddleware } from './middlewares/authMiddlewares.js';
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.set('view engine', 'hbs');
 app.set('views', './src/views');
 
 app.use(express.urlencoded({ extended: true }));
+app.use(authMiddleware);
 app.use(express.static('./src/static'));
 app.use(routes);
 
