@@ -15,8 +15,8 @@ app.set('view engine', 'hbs');
 app.set('views', './src/views');
 
 app.use(express.urlencoded({ extended: true }));
-app.use(authMiddleware);
 app.use(cookieParser());
+app.use(authMiddleware);
 app.use(express.static('./src/static'));
 app.use(routes);
 

@@ -132,7 +132,8 @@ exports.Prisma.MovieScalarFieldEnum = {
   description: 'description',
   releaseDate: 'releaseDate',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  userId: 'userId'
 };
 
 exports.Prisma.ArtistScalarFieldEnum = {

@@ -4,9 +4,10 @@ async function getAll(filter = {}) {
     return movieRepository.getAll(filter);
 }
 
-async function create(movieData) {
+async function create(movieData, userId) {
     movieData.rating = Number(movieData.rating);
     movieData.year = Number(movieData.year);
+    movieData.userId = userId;
     return movieRepository.create(movieData);
 }
 
