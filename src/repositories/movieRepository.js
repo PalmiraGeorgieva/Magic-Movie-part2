@@ -67,12 +67,19 @@ async function search(searchParams = {}) {
         return matchesSearch && matchesGenre && matchesYear;
     });
 }
+export async function remove(movieId, userId) {
+    const result = await prisma.movie.delete({
+        where: { id: movieId, userId: userId }
+    });
 
+    return result;
+}
 const movieRepository = {
     getAll,
     create,
     getById,
-    search
+    search,
+    remove
 };
 
 export default movieRepository;

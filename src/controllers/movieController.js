@@ -25,12 +25,15 @@ movieController.post('/create', isAuth, async (req, res) => {
     res.redirect('/');
 });
 
-movieController.get('/:movieId/details', async (req, res) => {
+movieController.get('/:movieId', async (req, res) => {
     const movieId = req.params.movieId;
+    const userId = req?.user.id;
 
     try {
         const movie = await movieServices.getById(movieId);
-        res.render('movies/details', { movie, pageTitle: 'Movie Details', ratingStars });
+        const ratingStars = '&#x2605;'.repeat(Math.floor(movie.rating));
+        const isOwner = movie.userId && movie.userId === userId;
+        res.render('movies/details', { movie, pageTitle: 'Movie Details', ratingStars, isOwner });
     } catch (err) {
         res.status(404).render('404', { title: 'Page Not Found' });
     }
@@ -49,5 +52,13 @@ movieController.post('/:movieId/attach', isAuth, async (req, res) => {
     await movieServices.attachArtist(movieId, artistId);
 
     res.redirect(`/movies/${movieId}`)
+});
+
+movieController.get('/movies/delete', isAuth, async (req, res) => {
+    const movieId = Number(req.params.movieId);
+    const userId = req.user.id;
+
+    await movieServices.delete(movieId, userId);
+    res.redirect('/');
 });
 export default movieController;

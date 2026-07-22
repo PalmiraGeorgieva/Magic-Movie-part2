@@ -19,17 +19,32 @@ async function getById(movieId) {
 async function search(searchParams) {
     return movieRepository.search(searchParams);
 }
-async function attachArtist(movieId, artistId) {
+export async function attachArtist(movieId, artistId) {
     const movieNumber = Number(movieId);
     const artistNumber = Number(artistId);
     const result = await movieRepository.attachArtist(movieNumber, artistNumber);
     return result;
 }
+
+export async function remove(movieId, userId) {
+    const movie = await movieRepository.getById(movieId);
+
+    if(!movie) {
+        throw new Error('Movie not found');
+    }
+
+    if (movie.userId !== userId) {
+        throw new Error("Unauthorized");
+        
+    }
+    await movieRepository.remove(movieId, userId);
+}
 const movieServices = {
     getAll,
     create,
     getById,
-    search
+    attachArtist,
+    remove
 };
 
 export default movieServices;
